@@ -18,23 +18,23 @@ export class EquiposService {
     this.URL_BASE = this.configuration.getUrlBase();
   }
 
-  crearHerramienta(data: any) {
+  crearEquipo(data: any) {
     return this.http.post(this.URL_BASE + 'equipos/crear', data);
   }
 
-  obtenerHerramientas() {
+  obtenerEquipo() {
     return this.http.get<any>(this.URL_BASE + 'equipos/listar/0/100');
   }
 
-  obtenerHerramientaId(id: any) {
+  obtenerEquipoId(id: any) {
     return this.http.get<any>(this.URL_BASE + 'equipos/consultar' + '/' + id);
   }
 
-  editarHerramienta(data: any, id: number) {
+  editarEquipoId(data: any, id: number) {
     return this.http.put(this.URL_BASE + 'equipos/actualizar' + '/' + id, data);
   }
 
-  eliminarHerramienta(id: number) {
+  eliminarEquipoId(id: number) {
     return this.http.delete(this.URL_BASE + 'equipos/eliminar' + '/' + id);
   }
 }

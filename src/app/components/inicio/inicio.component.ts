@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { HerramientasService } from 'src/app/services/herramientas/herramientas.service';
+import { EquiposService } from 'src/app/services/equipos/equipos.service';
 
 @Component({
   selector: 'app-inicio',
@@ -9,7 +9,7 @@ import { HerramientasService } from 'src/app/services/herramientas/herramientas.
 })
 export class InicioComponent implements OnInit {
   //lista de herramientas
-  listaHerrmientas: any = {};
+  listaEquipos: any[] = [];
 
   // Verificar Logeo
   verificadorBool: boolean = false;
@@ -18,12 +18,12 @@ export class InicioComponent implements OnInit {
   query: string = '';
 
   constructor(
-    private HerramientaService: HerramientasService,
+    private equiposService: EquiposService,
     private router: Router
   ) { }
 
   ngOnInit(): void {
-    this.getHerramientas();
+    this.getEquipos();
   }
 
   // verifyLooged() {
@@ -36,27 +36,27 @@ export class InicioComponent implements OnInit {
 
   /*
    ************************************************
-   *              TRAER HERRAMIENTAS              *
+   *              TRAER EQUIPOS                   *
    ************************************************
    */
-  getHerramientas() {
-    this.HerramientaService.obtenerHerramientas().subscribe({
+  getEquipos() {
+    this.equiposService.obtenerEquipo().subscribe({
       next: (data) => {
         if (this.query) {
-          // filtra los elementos de la lista según la consulta de búsqueda
-          this.listaHerrmientas = data.filter((element: any) =>
+          this.listaEquipos = data.filter((element: any) =>
             element.nombre.toLowerCase().includes(this.query.toLowerCase())
           );
         } else {
-          this.listaHerrmientas = data;
+          this.listaEquipos = data.content;
         }
       },
       error: (err) => { },
     });
   }
 
-  borrarHerramienta(id: any) {
-    this.HerramientaService.eliminarHerramienta(id).subscribe({
+
+  borrarEquipos(id: any) {
+    this.equiposService.eliminarEquipoId(id).subscribe({
       next: (data) => {
         window.location.reload();
       },
@@ -72,10 +72,10 @@ export class InicioComponent implements OnInit {
   onSearch(value: string) {
     if (value && value.length > 3) {
       this.query = value; // actualiza la variable de consulta
-      this.getHerramientas(); // filtra la lista de herramientas
+      this.getEquipos(); // filtra la lista de herramientas
     } else {
       this.query = '';
-      this.getHerramientas();
+      this.getEquipos();
     }
   }
 }
