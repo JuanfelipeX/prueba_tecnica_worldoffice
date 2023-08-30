@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { HerramientasService } from 'src/app/services/herramientas/herramientas.service';
+import { EquiposService } from 'src/app/services/equipos/equipos.service';
 
 @Component({
   selector: 'app-herramienta-detalles',
@@ -21,12 +21,12 @@ export class HerramientaDetallesComponent implements OnInit {
   post_id: any = this.pathName;
 
   constructor(
-    private HerramientaService: HerramientasService,
+    private equiposService: EquiposService,
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit(): void {
-    this.getHerramientas();
+    this.getEquipos();
   }
 
   /*
@@ -34,8 +34,8 @@ export class HerramientaDetallesComponent implements OnInit {
    *              TRAER HERRAMIENTAS              *
    ************************************************
    */
-  getHerramientas() {
-    this.HerramientaService.obtenerHerramientaId(this.post_id).subscribe({
+   getEquipos() {
+    this.equiposService.obtenerEquipoId(this.post_id).subscribe({
       next: (data) => {
         this.formulario = data;
       },
