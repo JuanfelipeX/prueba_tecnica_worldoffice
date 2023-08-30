@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { IniciarSesionService } from 'src/app/services/iniciar-sesion/iniciar-sesion.service';
 
 @Component({
   selector: 'app-header',
@@ -7,24 +8,22 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
+  formulario: any = {};
   verificadorBool: boolean = false;
 
-  constructor(private router: Router) {
-    this.verifyLooged();
+  constructor(private router: Router, 
+    private iniciarSesionService: IniciarSesionService,) {
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
-  verifyLooged() {
-    if (localStorage.getItem('contrasena')) {
-      this.verificadorBool = true;
-    } else {
-      this.verificadorBool = false;
-    }
-  }
-  borrarContra() {
-    localStorage.removeItem('contrasena');
-    this.verificadorBool = false;
-    location.reload();
+  cerrarSesion() {
+    this.iniciarSesionService.cerrarSesion(this.formulario).subscribe({
+      next: (data) => {
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
   }
 }

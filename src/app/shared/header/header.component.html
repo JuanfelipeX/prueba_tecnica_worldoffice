@@ -13,7 +13,7 @@
 
             <form class="d-flex">
                 <button class="btn btn-outline-primary me-3">
-                    <button id="buttonCerrarSesion" (click)="borrarContra()" style="text-decoration: none;">
+                    <button id="buttonCerrarSesion" (click)="cerrarSesion()" style="text-decoration: none;">
                         <a *ngIf="verificadorBool" style="text-decoration: none;">Cerrar Sesion</a>
                     </button>
                     <a *ngIf="!verificadorBool" [href]="'http://localhost:4200/iniciar-sesion'"

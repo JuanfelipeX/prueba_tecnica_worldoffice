@@ -20,12 +20,11 @@ export class IniciarSesionComponent implements OnInit {
   iniciarSesion() {
     this.iniciarSesionService.iniciarSesion(this.formulario).subscribe({
       next: (data) => {
-        console.log(this.formulario);
+        console.log(data);
       },
       error: (err) => {
-        console.log(this.formulario);
+        console.log(err);
       },
     });
   }
-
 }
