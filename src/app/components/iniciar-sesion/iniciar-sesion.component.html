@@ -4,16 +4,14 @@
 
             <!-- Imagen logo principal -->
             <div class="col-md-4 col-lg-7 col-xl-6">
-                <img src="https://asiri.es/wp-content/uploads/2020/08/insuit-accesibilidad-web.svg" class="img-fluid"
+                <img src="https://cdn.freebiesupply.com/images/large/2x/fifa-logo-png-transparent.png" class="img-fluid"
                     alt="Imagen principal de la WCAG">
             </div>
 
             <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
                 <!-- Texto Y Logo -->
                 <div class="text-center text-logo">
-                    <img src="https://cdn-icons-png.flaticon.com/512/1063/1063217.png" style="width: 125px;"
-                        alt="Logo pequeño de accesibilidad web">
-                    <h4 class="mt-4 mb-5 pb-1">Librerías de Herramientas de Accesibilidad y Usabilidad Web</h4>
+                    <h4 class="mt-4 mb-5 pb-1">INICIO DE SESION FIFA</h4>
                 </div>
 
                 <form>
@@ -22,16 +20,16 @@
 
                     <!-- Correo input -->
                     <div class="form-outline my-4">
-                        <label class="form-label">Correo Electrónico</label>
-                        <input type="email" class="form-control form-control-lg" id="input-email"
-                            [(ngModel)]="formulario.email" name="email" email required />
+                        <label class="form-label">Usuario</label>
+                        <input type="email" class="form-control form-control-lg" id="input-username"
+                            [(ngModel)]="formulario.username" name="username" required />
                     </div>
 
                     <!-- Contraseña input -->
                     <div class="form-outline mb-4">
                         <label class="form-label">Contraseña</label>
-                        <input type="password" id="input-contrasena" class="form-control form-control-lg"
-                            [(ngModel)]="formulario.contrasena" name="contrasena" email required />
+                        <input type="password" id="input-password" class="form-control form-control-lg"
+                            [(ngModel)]="formulario.password" name="password" required />
                     </div>
 
                     <!-- Checkbox -->
@@ -46,7 +44,8 @@
 
                     <!-- Submit Botón -->
                     <div class="text-center pt-1 mb-2 pb-1 ">
-                        <button class="btn btn-primary px-5" type="button" (click)="iniciarSesion()">Iniciar Sesión</button>
+                        <button class="btn btn-primary px-5" type="button" (click)="iniciarSesion()">Iniciar
+                            Sesión</button>
                     </div>
 
                     <div class="divider d-flex align-items-center my-4"></div>

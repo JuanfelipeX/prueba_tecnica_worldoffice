@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { ConfigurationService } from '../configuration.service';
 
 @Injectable({
@@ -17,11 +18,11 @@ export class IniciarSesionService {
     this.URL_BASE = this.configuration.getUrlBase();
   }
 
-  iniciarSesion(data: any) {
-    return this.http.post(this.URL_BASE + 'sesion', data);
+  iniciarSesion(data: any): Observable<any>  {
+    return this.http.post(this.URL_BASE + 'login', data);
   }
 
-  cerrarSesion(data: any) {
-    return this.http.post(this.URL_BASE + 'sesion', data);
+  cerrarSesion(data: any) : Observable<any> {
+    return this.http.post(this.URL_BASE + 'logout', data);
   }
 }
