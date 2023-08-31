@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { HerramientasService } from 'src/app/services/herramientas/herramientas.service';
+import { EquiposService } from 'src/app/services/equipos/equipos.service';
+import { IniciarSesionService } from 'src/app/services/iniciar-sesion/iniciar-sesion.service';
 
 @Component({
   selector: 'app-herramienta',
@@ -11,7 +12,7 @@ export class HerramientaComponent implements OnInit {
   formulario: any = {};
 
   constructor(
-    private HerramientaService: HerramientasService,
+    private equipoService: EquiposService,
     private router: Router
   ) {
     this.verifyLooged();
@@ -21,13 +22,17 @@ export class HerramientaComponent implements OnInit {
 
   /*
    ************************************************
-   *              REGISTRAR HERRAMIENTA           *
+   *              REGISTRAR EQUIPO                *
    ************************************************
    */
-  registrarHerramientas() {
-    this.HerramientaService.crearHerramienta(this.formulario).subscribe({
-      next: (data) => {},
-      error: (err) => {},
+  registrarEquipo() {
+    this.equipoService.crearEquipo(this.formulario).subscribe({
+      next: (data) => {
+        console.log(data);
+      },
+      error: (err) => {
+        console.log(err);
+      },
     });
   }
 
