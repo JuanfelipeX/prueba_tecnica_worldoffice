@@ -15,7 +15,9 @@ export class HeaderComponent implements OnInit {
     private iniciarSesionService: IniciarSesionService,) {
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.verifyLooged();
+   }
 
   cerrarSesion() {
     this.iniciarSesionService.cerrarSesion(this.formulario).subscribe({
@@ -25,5 +27,13 @@ export class HeaderComponent implements OnInit {
         console.log(err);
       },
     });
+  }
+
+  verifyLooged() {
+    if (localStorage.getItem('contrasena')) {
+      this.verificadorBool = true;
+    } else {
+      this.verificadorBool = false;
+    }
   }
 }

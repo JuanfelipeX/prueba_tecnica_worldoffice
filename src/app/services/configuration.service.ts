@@ -9,7 +9,7 @@ export class ConfigurationService {
   constructor() {
     /* Configuración de url del servidor Api Rest */
     this.URL_BASE = 'https://wo-fifa.azurewebsites.net/';
-    this.URL_WEB = 'http://backend.libreriasweb.test/';
+    this.URL_WEB = 'https://wo-fifa.azurewebsites.net/';
   }
 
   /*-------------------------------------------------------------------------------

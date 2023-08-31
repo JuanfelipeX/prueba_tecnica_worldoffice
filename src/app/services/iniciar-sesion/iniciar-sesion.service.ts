@@ -25,4 +25,5 @@ export class IniciarSesionService {
   cerrarSesion(data: any) : Observable<any> {
     return this.http.post(this.URL_BASE + 'logout', data);
   }
+  
 }

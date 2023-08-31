@@ -24,15 +24,16 @@ export class InicioComponent implements OnInit {
 
   ngOnInit(): void {
     this.getEquipos();
+    this.verifyLooged();
   }
 
-  // verifyLooged() {
-  //   if (localStorage.getItem('contrasena')) {
-  //     this.verificadorBool = true;
-  //   } else {
-  //     this.verificadorBool = false;
-  //   }
-  // }
+  verifyLooged() {
+    if (localStorage.getItem('contrasena')) {
+      this.verificadorBool = true;
+    } else {
+      this.verificadorBool = false;
+    }
+  }
 
   /*
    ************************************************

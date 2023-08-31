@@ -20,7 +20,10 @@ export class IniciarSesionComponent implements OnInit {
   iniciarSesion() {
     this.iniciarSesionService.iniciarSesion(this.formulario).subscribe({
       next: (data) => {
-        console.log(data);
+        localStorage.setItem(
+          'contrasena',
+          this.formulario.password
+        );
       },
       error: (err) => {
         console.log(err);
