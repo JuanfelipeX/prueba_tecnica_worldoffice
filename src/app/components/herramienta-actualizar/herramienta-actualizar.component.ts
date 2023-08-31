@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { EquiposService } from 'src/app/services/equipos/equipos.service';
 import { HerramientasService } from 'src/app/services/herramientas/herramientas.service';
 
 @Component({
@@ -21,7 +22,7 @@ export class HerramientaActualizarComponent implements OnInit {
   post_id: any = this.pathName;
 
   constructor(
-    private HerramientaService: HerramientasService,
+    private equipoService: EquiposService,
     private router: Router
   ) {
     this.verifyLooged();
@@ -33,15 +34,15 @@ export class HerramientaActualizarComponent implements OnInit {
 
   /*
    ************************************************
-   *              TRAER HERRAMIENTAS              *
+   *              TRAER EQUIPO              *
    ************************************************
    */
   getHerramientas() {
-    this.HerramientaService.obtenerHerramientaId(this.post_id).subscribe({
+    this.equipoService.obtenerEquipoId(this.post_id).subscribe({
       next: (data) => {
         this.formulario = data;
       },
-      error: (err) => {},
+      error: (err) => { },
     });
   }
 
@@ -51,14 +52,14 @@ export class HerramientaActualizarComponent implements OnInit {
    ************************************************
    */
   actualizarHerramientas() {
-    this.HerramientaService.editarHerramienta(
+    this.equipoService.editarEquipoId(
       this.formulario,
       this.post_id
     ).subscribe({
       next: (data) => {
         this.router.navigateByUrl('inicio');
       },
-      error: (err) => {},
+      error: (err) => { },
     });
   }
 

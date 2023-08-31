@@ -23,68 +23,74 @@
                             </div>
                         </div>
 
-                        <!-- Input Descripción -->
+                        <!-- Input Estadio -->
                         <div class="d-flex flex-row align-items-center mb-4">
                             <div class="form-outline flex-fill mb-0">
-                                <label class="form-label">Descripción de la Herramienta</label>
-                                <input type="text" id="input-descripcion" class="form-control"
-                                    [(ngModel)]="formulario.descripcion" name="descripcion" required />
+                                <label class="form-label">Nombre del Estadio</label>
+                                <input type="text" id="input-estadio" class="form-control"
+                                    [(ngModel)]="formulario.estadio" name="estadio" required />
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-md-6 mb-2">
-                                <!-- Input Url -->
+                                <!-- Input SitioWeb -->
                                 <div class="d-flex flex-row align-items-center mb-2">
                                     <div class="form-outline flex-fill mb-0">
-                                        <label class="form-label">URL</label>
-                                        <input type="text" id="input-url"
+                                        <label class="form-label">SitioWeb</label>
+                                        <input type="text" id="input-sitioWeb"
                                             class="block w-full py-1 sm:text-sm form-control"
-                                            [(ngModel)]="formulario.url" name="url" required />
+                                            [(ngModel)]="formulario.sitioWeb" name="sitioWeb" required />
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6 mb-2">
-                                <!-- Input Precio -->
-                                <label class="form-label">Precio</label>
+                                <!-- Input Nacionalidad -->
                                 <div class="d-flex flex-row align-items-center mb-2">
                                     <div class="form-outline flex-fill mb-0">
-                                        <select id="input-precio" [(ngModel)]="formulario.precio" name="precio"
-                                            class="block w-full py-1 sm:text-sm form-control">
-                                            <option value='Pago'>Pago</option>
-                                            <option value='Libre'>Libre</option>
-                                            <option value='Mixto'>Mixto</option>
-                                        </select>
+                                        <label class="form-label">Nacionalidad</label>
+                                        <input type="text" id="input-nacionalidad"
+                                            class="block w-full py-1 sm:text-sm form-control"
+                                            [(ngModel)]="formulario.nacionalidad" name="nacionalidad" required />
                                     </div>
                                 </div>
                             </div>
 
                         </div>
 
-                        <!-- Input Etiquetas -->
-                        <!-- <div class="d-flex flex-row align-items-center mb-4">
-                            <div class="form-outline flex-fill mb-0">
-                                <label class="form-label">Etiquetas</label>
-                                <input type="text" id="input-pais" class="form-control" [(ngModel)]="formulario.pais"
-                                    name="pais" required />
-                            </div>
-                        </div> -->
-
-                        <!-- Input Proveedor -->
+                        <!-- Input Fundacion -->
                         <div class="d-flex flex-row align-items-center mb-4">
                             <div class="form-outline flex-fill mb-0">
-                                <label class="form-label">Proveedor</label>
-                                <input type="text" id="input-provedor" class="form-control"
-                                    [(ngModel)]="formulario.provedor" name="provedor" email required />
+                                <label class="form-label">Año de la Fundacion</label>
+                                <input type="text" id="input-fundacion" class="form-control" [(ngModel)]="formulario.fundacion"
+                                    name="fundacion" required />
                             </div>
                         </div>
 
-                        <!-- Input Normas -->
+                        <!-- Input Entrenador -->
                         <div class="d-flex flex-row align-items-center mb-4">
                             <div class="form-outline flex-fill mb-0">
-                                <label class="form-label">Normas</label>
-                                <input type="text" id="input-normas" class="form-control"
-                                    [(ngModel)]="formulario.normas" name="normas" required />
+                                <label class="form-label">Entrenador</label>
+                                <input type="text" id="input-entrenador" class="form-control"
+                                    [(ngModel)]="formulario.entrenador" name="entrenador" email required />
+                            </div>
+                        </div>
+
+                        <!-- Input Capacidad -->
+                        <div class="d-flex flex-row align-items-center mb-4">
+                            <div class="form-outline flex-fill mb-0">
+                                <label class="form-label">Capacidad</label>
+                                <input type="text" id="input-capacidad" class="form-control"
+                                    [(ngModel)]="formulario.capacidad" name="capacidad" required />
+                            </div>
+                        </div>
+
+                        <!-- Input Valor -->
+                        <div class="d-flex flex-row align-items-center mb-4">
+                            <div class="form-outline flex-fill mb-0">
+                                <label class="form-label">Valor</label>
+                                <input type="text" id="input-valor" class="form-control"
+                                    [(ngModel)]="formulario.valor" name="valor" required />
                             </div>
                         </div>
 
