@@ -1,5 +1,14 @@
 # Prueba Tecnica
 
+![image](https://github.com/JuanfelipeX/prueba_tecnica_worldoffice/assets/72418729/a05f74b8-330a-4fb4-bf38-9f10aaf410b6)
+
+![image](https://github.com/JuanfelipeX/prueba_tecnica_worldoffice/assets/72418729/b4e4238e-1922-44f6-99f8-6449cc0fb486)
+
+![image](https://github.com/JuanfelipeX/prueba_tecnica_worldoffice/assets/72418729/83f1b782-cf15-4207-a1b6-d9564ac0a8f5)
+
+![image](https://github.com/JuanfelipeX/prueba_tecnica_worldoffice/assets/72418729/91af9143-01fd-4f65-96cc-a41ed31af0f9)
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.1.
 
 ## Development server
